@@ -1,0 +1,104 @@
+.form {
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px;
+}
+
+.forms {
+  display: flex;
+  flex-direction: row;
+}
+
+input[type="text"],
+select,
+textarea,
+input[type="number"] {
+  width: 60%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid skyblue;
+  border-radius: 4px;
+  background-color: transparent;
+  color: white;
+  font-size: 20px;
+}
+
+select {
+  color: black;
+  background-color: white;
+}
+
+.checkboxes {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 10px;
+  margin: 20px;
+}
+
+checkbox {
+  width: 20px;
+  height: 20px;
+}
+
+label {
+  user-select: none;
+  cursor: pointer;
+  margin-right: 50px;
+}
+
+.range {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.range input {
+  width: 400px;
+}
+
+.range input[type="number"] {
+  width: 90px;
+  margin-top: 30px;
+}
+
+.range input[type="color"] {
+  width: 90px;
+  height: 90px;
+  margin-top: 30px;
+}
+
+.modal {
+  display: block;
+  background-color: #282c3477;
+}
+
+.showline {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  background-color: aliceblue;
+  top: 40px;
+  right: 60px;
+}
+.alert {
+  width: 350px;
+}

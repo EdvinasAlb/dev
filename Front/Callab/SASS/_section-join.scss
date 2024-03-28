@@ -1,0 +1,46 @@
+$primary-color: #9a54bc;
+
+.join {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  h3 {
+    margin-bottom: 0;
+  }
+  .text {
+    text-align: center;
+    width: 80%;
+  }
+  .head-line {
+    position: relative;
+    width: 85%;
+    height: 600px;
+    & > * {
+      position: absolute;
+    }
+
+    a {
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    img[alt="line"] {
+      width: 100%;
+    }
+    img[alt="face"] {
+      &:nth-child(1) {
+      }
+    }
+    p {
+      color: $primary-color;
+      display: inline;
+      font-weight: 500;
+      top: 10%;
+      right: 12%;
+      font-size: 0.8rem;
+    }
+  }
+}

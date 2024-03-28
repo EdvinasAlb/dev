@@ -1,0 +1,16 @@
+.trusted-brands {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  h3 {
+    font-size: 3rem;
+    font-weight: 500;
+  }
+  .logos {
+    display: flex;
+    gap: 6rem;
+    img {
+      height: 6rem;
+    }
+  }
+}

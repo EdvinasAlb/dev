@@ -1,0 +1,24 @@
+$link-bg: #60267f;
+
+.projects-done {
+  .projects {
+    max-width: 75%;
+    margin: 0 auto;
+    display: flex;
+    gap: 2rem;
+    .project {
+      width: 33%;
+      img {
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+      p {
+        font-weight: 500;
+        margin: 0 0.7rem 1rem 0.7rem;
+        &.pink {
+          color: $link-bg;
+        }
+      }
+    }
+  }
+}

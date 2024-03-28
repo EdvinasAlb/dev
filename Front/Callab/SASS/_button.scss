@@ -1,0 +1,30 @@
+$primary-color: #9a54bc;
+$secondary-color: #60267f;
+
+.btn {
+  display: inline-block;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  color: $primary-color;
+  border: solid 2px $primary-color;
+  border-radius: 5px;
+  padding: 0.9rem 1.3rem;
+  text-decoration: none;
+  &--dark {
+    background-color: $primary-color;
+    color: #fff;
+    padding: 0.9rem 1.8rem;
+  }
+  &--composition {
+    position: absolute;
+    width: 11rem;
+    text-align: center;
+    background-color: #fff;
+    transform: translate(-50%, 480px);
+    color: #000;
+    padding: 12px 20px;
+    border-width: 2px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    font-weight: 500;
+  }
+}

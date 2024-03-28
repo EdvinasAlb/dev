@@ -1,0 +1,79 @@
+.navbar {
+  background-color: #282c34;
+  color: white;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.navbar-brand {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.navbar-nav a,
+.navbar a {
+  color: white;
+  text-decoration: none;
+}
+.navbar-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  font-family: sans-serif;
+}
+.nav-link {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.active {
+  color: #61dafb;
+}
+
+.nav-link:hover {
+  color: #61dafb;
+}
+
+h1 {
+  text-align: center;
+  font-size: 100px;
+  font-family: sans-serif;
+}
+
+h2 {
+  text-align: center;
+  font-size: 50px;
+  font-family: sans-serif;
+}
+h3 {
+  text-align: center;
+  font-size: 100px;
+  font-family: sans-serif;
+  color: skyblue;
+}
+a {
+  color: skyblue;
+  font-size: 30px;
+  text-decoration: underline;
+}
+
+.about-param__links {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-family: sans-serif;
+}
+/* Multi_pages */
+/* Book_store */

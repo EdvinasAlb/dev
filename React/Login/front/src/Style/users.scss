@@ -1,0 +1,73 @@
+.users-box {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 800px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    margin: 40px auto;
+    flex-wrap: wrap;
+    gap: 40px;
+
+    .user {
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+        gap: 20px;
+        flex: 100%;
+        border-bottom: 1px solid #ccc;
+
+        .about {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: row;
+            gap: 20px;
+            .name {
+                color: black;
+                font-size: 30px;
+                font-weight: bold;
+            }
+
+            .role {
+                color: crimson;
+                font-size: 30px;
+                display: flex;
+                gap: 10px;
+
+            }
+        }
+        .actions {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex-direction: row;
+            gap: 20px;
+            a {
+                text-decoration: none;
+                font-size: 20px;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+            .edit {
+                color: darkgreen;
+                font-size: 30px;
+            }
+            .delete {
+                color: crimson;
+                font-size: 30px;
+            }
+        }
+    }
+
+}
+
+.users-center {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}

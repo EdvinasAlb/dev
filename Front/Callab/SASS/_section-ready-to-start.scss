@@ -1,0 +1,129 @@
+$grey-text: #a79d9d;
+$light-bg: rgba(226, 189, 242, 0.11);
+$light-green: #56e6a5;
+$bright-yellow: #ffe87a;
+$btn-color: #2b0236;
+.ready-to-start {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $light-bg;
+  padding-top: 8rem;
+  gap: 4rem;
+  padding-bottom: 8rem;
+  margin-bottom: 0;
+  h3 {
+    margin-bottom: 1.3rem;
+  }
+  small {
+    color: $grey-text;
+    text-align: center;
+    display: block;
+    font-size: 0.9rem;
+  }
+  .switcher {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+    font-size: 1.1rem;
+    .monthly {
+      color: $grey-text;
+    }
+
+    .checkbox {
+      display: none;
+    }
+
+    .checkbox + label {
+      background-color: $light-green;
+    }
+    .checkbox:checked + label {
+      background-color: $grey-text;
+      .white-dot {
+        margin-left: 0.4rem;
+      }
+    }
+
+    .green {
+      display: flex;
+      align-items: center;
+      width: 2.5rem;
+      height: 1.3rem;
+      background-color: $light-green;
+      border-radius: 90px;
+      margin: 0 0.6rem;
+      .white-dot {
+        background-color: #fff;
+        width: 0.9rem;
+        height: 0.9rem;
+        margin-left: 1.25rem;
+        border-radius: 50%;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+        transition: all 0.2s;
+      }
+    }
+    .dicount {
+      background-color: $bright-yellow;
+      font-size: 0.7rem;
+      padding: 0.2rem 0.3rem;
+      border-radius: 1px;
+    }
+  }
+  .cards {
+    display: flex;
+    gap: 3rem;
+    z-index: 66;
+    .card-green {
+      background-color: $light-green;
+      .price {
+        margin-bottom: 2.6rem;
+      }
+      a:link,
+      a:visited {
+        background-color: #fff;
+      }
+      .small-text {
+        font-weight: 300;
+      }
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.6rem;
+      width: 250px;
+      border: 1px solid #000;
+      padding: 1.6rem 1.2rem;
+      border-radius: 15px;
+      .plan {
+        font-weight: 500;
+        font-size: 1.3rem;
+      }
+      .price {
+        font-size: 2.6rem;
+        font-weight: 500;
+      }
+      a:link,
+      a:visited {
+        color: $btn-color;
+        border: 2px solid $btn-color;
+        border-radius: 5px;
+        padding: 1rem 2rem;
+        text-decoration: none;
+        font-weight: 500;
+      }
+      ul {
+        list-style: url("../img/arrowRight.svg");
+        margin-left: 1.3rem;
+        li {
+          font-weight: 300;
+        }
+
+        li:not(:last-child) {
+          margin-bottom: 0.8rem;
+        }
+      }
+    }
+  }
+}

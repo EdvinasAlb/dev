@@ -1,0 +1,52 @@
+$light-bg: rgba(226, 189, 242, 0.11);
+
+.reviews {
+  position: relative;
+  background-color: $light-bg;
+  margin-top: -1.3rem;
+  padding: 5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .arrow {
+    padding: 0 6rem;
+    z-index: 66;
+  }
+  .reviews-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6rem;
+    z-index: 66;
+    .stars {
+      font-size: 2.5rem;
+      color: #e13c5a;
+    }
+    .review {
+      text-align: center;
+      font: 0.8rem;
+      font-weight: 500;
+    }
+    .profile {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      img {
+        height: 60px;
+      }
+
+      p {
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
+    }
+  }
+}
+.big-white-box {
+  position: absolute;
+  right: 0;
+  bottom: 3rem;
+  width: 70%;
+  height: 800px;
+  background-color: #fff;
+}

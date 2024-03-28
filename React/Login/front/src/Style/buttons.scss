@@ -1,0 +1,101 @@
+.buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 70%;
+    margin: 20px;
+}
+
+button:not(.btn-close) {
+    appearance: none;
+    backface-visibility: hidden;
+    background-color: gray;
+    border-radius: 8px;
+    border-style: none;
+    box-shadow: transparentize(gray, 0.85) 0 4px 9px;
+    box-sizing: border-box;
+    color: $white;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Inter, -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: normal;
+    line-height: 1.5;
+    outline: none;
+    overflow: hidden;
+    padding: 13px 20px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transform: translate3d(0, 0, 0);
+    transition: all .3s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: top;
+    white-space: nowrap;
+    margin: 10px;
+
+
+    &:hover {
+        background-color: darken(gray, 20);
+        opacity: 1;
+        transform: translateY(0);
+        transition-duration: .35s;
+    }
+
+    &:active {
+        transform: translateY(2px);
+        transition-duration: .35s;
+    }
+
+    &:hover {
+        box-shadow: transparentize(darken(gray, 20), 0.8) 0 6px 12px;
+    }
+
+    &.black{
+        background-color: $black;
+        box-shadow: transparentize($black, 0.85) 0 4px 9px;
+        &:hover {
+            background-color: darken($black, 20);
+            box-shadow: transparentize(darken($black, 20), 0.8) 0 6px 12px;
+        }
+    }
+    &.red{
+        background-color: $red;
+        box-shadow: transparentize($red, 0.85) 0 4px 9px;
+        &:hover {
+            background-color: darken($red, 20);
+            box-shadow: transparentize(darken($red, 20), 0.8) 0 6px 12px;
+        }
+    }
+    &.green{
+        background-color: $green;
+        box-shadow: transparentize($green, 0.85) 0 4px 9px;
+        &:hover {
+            background-color: darken($green, 20);
+            box-shadow: transparentize(darken($green, 20), 0.8) 0 6px 12px;
+        }
+    }
+    &.white{
+        background-color: $white;
+        box-shadow: transparentize($white, 0.85) 0 4px 9px;
+        color: $black;
+        &:hover {
+            background-color: darken($white, 20);
+            box-shadow: transparentize(darken($white, 20), 0.8) 0 6px 12px;
+        }
+    }
+    &.yellow{
+        background-color: $yellow;
+        box-shadow: transparentize($yellow, 0.85) 0 4px 9px;
+        &:hover {
+            background-color: darken($yellow, 20);
+            box-shadow: transparentize(darken($yellow, 20), 0.8) 0 6px 12px;
+        }
+    }
+
+}

@@ -1,0 +1,192 @@
+.form {
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: 2px solid $green;
+    border-radius: 14px;
+    padding: 20px;
+    background-color: lighten($green, 40%);
+
+    input[type="text"],
+    input[type="number"],
+    input[type="password"],
+    select,
+    textarea {
+        width: 100%;
+        padding: 12px 20px;
+        box-sizing: border-box;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 2px solid $green;
+        border-radius: 4px;
+        background-color: $white;
+        color: $black;
+        font-size: 20px;
+        display: block;
+
+        &:focus {
+            outline: none;
+            border: 2px solid $black;
+        }
+    }
+
+    input[type="number"] {
+        width: 100px;
+    }
+
+    input[type="color"] {
+        width: 100px;
+        height: 30px;
+        cursor: pointer;
+    }
+
+    select {
+        background-color: #282c34;
+        color: $white;
+        font-size: 20px;
+    }
+
+    .checkboxes {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 10px;
+
+        label {
+            color: $black;
+            font-size: 30px;
+            padding: 0 30px;
+            user-select: none;
+            cursor: pointer;
+            position: relative;
+
+            &:before {
+                content: '\2610';
+                display: inline-block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                color: $green;
+            }
+        }
+
+        input {
+            display: none;
+
+            &:checked+label {
+                &:before {
+                    content: '\2611';
+                }
+            }
+        }
+    }
+
+    .radios {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 10px;
+        margin: 20px;
+
+        label {
+            color: $white;
+            font-size: 30px;
+            padding: 0 30px;
+            user-select: none;
+            cursor: pointer;
+            position: relative;
+
+            &:before {
+                content: '\25CE';
+                display: inline-block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                color: $white;
+            }
+        }
+
+        input {
+            display: none;
+
+            &:checked+label {
+                &:before {
+                    content: '\25C9';
+                }
+            }
+        }
+    }
+
+    input[type="range"] {
+        -webkit-appearance: none;
+        appearance: none;
+        background: transparent;
+        cursor: pointer;
+        border: none;
+        width: 100%;
+        margin-top: 20px;
+
+        &::-webkit-slider-runnable-track {
+            background: $green;
+            height: 3px;
+        }
+
+        &::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            /* Override default look */
+            appearance: none;
+            margin-top: -12px;
+            /* Centers thumb on the track */
+            background-color: $green;
+            height: 28px;
+            width: 20px;
+        }
+
+    }
+    .form-group {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 10px;
+
+    }
+
+}
+.form-range {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    border: none;
+    width: 100%;
+    margin-top: 20px;
+
+    &::-webkit-slider-runnable-track {
+        background: $green;;
+        height: 3px;
+    }
+
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        /* Override default look */
+        appearance: none;
+        margin-top: -12px;
+        /* Centers thumb on the track */
+        background-color: $green;;
+        height: 28px;
+        width: 20px;
+    }
+
+}

@@ -1,0 +1,52 @@
+$primary-color: #9a54bc;
+$secondary-color: #60267f;
+
+//Header
+header {
+  box-shadow: 0 0.3rem 0.3rem rgba(0, 0, 0, 0.1);
+  .india {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700;
+    background-color: $secondary-color;
+    color: #fff;
+    text-align: center;
+    padding: 0.7rem;
+    font-size: 0.7rem;
+    a:link,
+    a:visited {
+      color: inherit;
+    }
+  }
+  .head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.8rem;
+    padding: 1.5rem 1.3rem;
+    h1 {
+      font-family: "Comfortaa", sans-serif;
+      color: $primary-color;
+      margin-left: 2.7rem;
+      font-weight: 500;
+      font-size: 2.8rem;
+    }
+    nav {
+      margin-left: auto;
+      ul {
+        display: flex;
+        list-style: none;
+        gap: 2.5rem;
+        li {
+          font-family: "Roboto", sans-serif;
+          font-weight: 500;
+        }
+        a:link,
+        a:visited {
+          text-decoration: none;
+          color: #000;
+        }
+      }
+    }
+  }
+}
