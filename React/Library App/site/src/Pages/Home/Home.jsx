@@ -51,16 +51,29 @@ export default function Index() {
       ) {
         authors
           .find((author) => author.id === item.id)
-          .books.push({ id: item.book_id, title: item.title, heroes: [] });
+          .books.push({
+            id: item.book_id,
+            title: item.title,
+            url: item.bookUrl,
+            rate: item.rate,
+            heroes: [],
+          });
       }
 
       authors
         .find((author) => author.id === item.id)
         .books.find((book) => book.id === item.book_id)
-        .heroes.push({ id: item.hero_id, name: item.hero, good: item.good });
+        .heroes.push({
+          id: item.hero_id,
+          name: item.hero,
+          good: item.good,
+          url: item.heroUrl,
+        });
     });
     return authors;
   };
+
+  console.log(data);
 
   useEffect(
     (_) => {
@@ -145,12 +158,16 @@ export default function Index() {
                         <ul>
                           {item.books.map((book) => (
                             <li
+                              className="nice-link"
                               style={{
                                 marginBottom: book.heroes.length * 24 + "px",
                               }}
                               key={book.id}
                             >
-                              {book.title}
+                              <a href={"#book/" + book.url}>{book.title}</a>
+                              <span className="m-3">
+                                {book.rate ? book.rate + "/5" : ""}
+                              </span>
                             </li>
                           ))}
                         </ul>
@@ -177,7 +194,7 @@ export default function Index() {
                                             : "crimson",
                                           textDecoration: "none",
                                         }}
-                                        href={"#hero/" + hero.id}
+                                        href={"#hero/" + hero.url}
                                       >
                                         {hero.name}
                                       </a>

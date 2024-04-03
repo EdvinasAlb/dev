@@ -15,12 +15,7 @@ export default function Index() {
   const { data: rating, loading: ratingLoading } = useGet(
     "/rating/" + (params[0] || "") + "/" + localStorage.getItem("userMark")
   );
-  const {
-    setSendData,
-    returnData,
-    loading: rateLoading,
-    setPostUrl,
-  } = usePost();
+  const { setSendData, setPostUrl } = usePost();
 
   //Data
   const heroes = (data) => {
@@ -31,6 +26,7 @@ export default function Index() {
         name: item.hero,
         good: item.good,
         image: item.image,
+        url: item.heroUrl,
       });
     });
     return h;
@@ -90,9 +86,6 @@ export default function Index() {
                 <h3>
                   <span>{book.title}</span>
                 </h3>
-                <div>
-                  <h1>Book rating</h1>
-                </div>
               </div>
               <div className="card-body">
                 <div className="row">
@@ -190,8 +183,10 @@ export default function Index() {
                               className="img-thumbnail"
                             />
                           )}
-                          <div className="d-flex">
-                            <p>{hero.name}</p>
+                          <div className="d-flex nice-link">
+                            <a href={"#hero/" + hero.url}>
+                              <p>{hero.name}</p>
+                            </a>
                             <span
                               className={
                                 "books-icon icon " +

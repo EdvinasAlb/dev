@@ -1,0 +1,20 @@
+$bg-light: rgba(226, 189, 242, 0.11);
+.map-section {
+  background-color: $bg-light;
+  padding: 0 6%;
+  display: flex;
+  .contacts {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+  .map {
+    width: 60%;
+    iframe {
+      width: 100%;
+    }
+  }
+}

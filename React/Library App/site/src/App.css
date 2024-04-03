@@ -90,8 +90,6 @@
 }
 .mb-20 {
   margin-bottom: 20px;
-  border-bottom: 1px solid lightgrey;
-  border-left: 1px solid lightgrey;
 }
 
 .no-heroes {
@@ -188,4 +186,10 @@
   align-items: center;
   gap: 10px;
   font-size: 14px;
+}
+
+.nice-link a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
 }

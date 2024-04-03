@@ -106,7 +106,7 @@ app.get("/", (req, res) => {
   const sort = req.query.sort || "";
   let sql;
   if (sort === "name_asc") {
-    sql = `SELECT a.id, a.name, a.surname, b.id as book_id, b.title, b.pages, b.genre, h.id as hero_id, h.name as hero, good
+    sql = `SELECT a.id, a.name, a.surname, b.id as book_id, b.title, b.pages, b.genre, h.id as hero_id, h.name as hero, good, h.url AS heroUrl, b.url AS bookUrl, b.rate
     FROM authors as a
     LEFT JOIN books as b
     ON a.id = b.author_id
@@ -114,7 +114,7 @@ app.get("/", (req, res) => {
     ON b.id = h.book_id
     ORDER BY a.surname, a.name`;
   } else if (sort === "name_desc") {
-    sql = `SELECT a.id, a.name, a.surname, b.id as book_id, b.title, b.pages, b.genre, h.id as hero_id, h.name as hero, good
+    sql = `SELECT a.id, a.name, a.surname, b.id as book_id, b.title, b.pages, b.genre, h.id as hero_id, h.name as hero, good, h.url AS heroUrl, b.url AS bookUrl, b.rate
     FROM authors as a
     LEFT JOIN books as b
     ON a.id = b.author_id
@@ -122,7 +122,7 @@ app.get("/", (req, res) => {
     ON b.id = h.book_id
     ORDER BY a.surname DESC, a.name DESC`;
   } else {
-    sql = `SELECT a.id, a.name, a.surname, b.id as book_id, b.title, b.pages, b.genre, h.id as hero_id, h.name as hero, good
+    sql = `SELECT a.id, a.name, a.surname, b.id as book_id, b.title, b.pages, b.genre, h.id as hero_id, h.name as hero, good, h.url AS heroUrl, b.url AS bookUrl, b.rate
     FROM authors as a
     LEFT JOIN books as b
     ON a.id = b.author_id
@@ -139,17 +139,17 @@ app.get("/", (req, res) => {
 });
 
 //Heroes
-app.get("/hero/:id", (req, res) => {
+app.get("/hero/:slug", (req, res) => {
   const sql = `
-  SELECT h.id, h.name, a.name as authorName, a.surname as authorSurname, good, title, book_id, image
+  SELECT h.id, h.name, a.name as authorName, a.surname as authorSurname, good, title, book_id, image, b.url
   FROM heroes as h
   LEFT JOIN books as b
   ON h.book_id = b.id
   LEFT JOIN authors as a
   ON b.author_id = a.id
-  WHERE h.id = ?
+  WHERE h.url = ?
   `;
-  connection.query(sql, [req.params.id], (err, result) => {
+  connection.query(sql, [req.params.slug], (err, result) => {
     if (err) {
       res.status(500).send(err);
     } else {
@@ -161,7 +161,7 @@ app.get("/hero/:id", (req, res) => {
 //Books
 app.get("/book/:slug", (req, res) => {
   const sql = `
-  Select b.id, title, pages, genre, a.name, surname, author_id, url, h.id as hero_id, h.name as hero, good, image
+  Select b.id, title, pages, genre, a.name, surname, author_id, b.url AS bookUrl, h.url AS heroUrl, h.id as hero_id, h.name as hero, good, image
 
   FROM books AS b
   LEFT JOIN authors AS a
@@ -334,12 +334,17 @@ app.post("/rating/:id/:mark", (req, res) => {
       const ratings = JSON.parse(result[0].ratings);
       ratings.push({ mark, rate });
       const newRatings = JSON.stringify(ratings);
+      //Ratings
+      const votes = ratings.length;
+      const sum = ratings.reduce((acc, item) => acc + +item.rate, 0);
+      const newRate = +(sum / votes).toFixed(1);
+
       const sql = `
       UPDATE books
-      SET ratings = ?
+      SET ratings = ?, rate = ?
       WHERE id = ?
       `;
-      connection.query(sql, [newRatings, req.params.id], (err) => {
+      connection.query(sql, [newRatings, newRate, req.params.id], (err) => {
         if (err) {
           res.status(500).send(err);
         } else {
@@ -526,21 +531,27 @@ app.post("/authors", (req, res) => {
     });
     return;
   }
+  //Slug
+  const slug = name.toLowerCase() + "-" + surname.toLowerCase();
   //SQL
   const sql =
-    "INSERT INTO authors (name, surname, nickname, born) VALUES (?,?,?,?)";
-  connection.query(sql, [name, surname, nickname, born], (err, result) => {
-    if (err) {
-      res.status(500).send(err);
-    } else {
-      res.json({
-        success: true,
-        id: result.insertId,
-        uuid: req.body.id,
-        message: { type: "success", text: "Author added!" },
-      });
+    "INSERT INTO authors (name, surname, nickname, born, url) VALUES (?,?,?,?,?)";
+  connection.query(
+    sql,
+    [name, surname, nickname, born, slug],
+    (err, result) => {
+      if (err) {
+        res.status(500).send(err);
+      } else {
+        res.json({
+          success: true,
+          id: result.insertId,
+          uuid: req.body.id,
+          message: { type: "success", text: "Author added!" },
+        });
+      }
     }
-  });
+  );
 });
 
 //Create books
@@ -601,11 +612,18 @@ app.post("/heroes", (req, res) => {
     });
     return;
   }
+  const slug = name.toLowerCase().replace(/ /g, "-");
   const sql =
-    "INSERT INTO heroes (name, good, book_id, image) VALUES (?,?,?,?)";
+    "INSERT INTO heroes (name, good, book_id, image, url) VALUES (?,?,?,?,?)";
   connection.query(
     sql,
-    [name, good, book_id, filename !== null ? "imagesHero/" + filename : null],
+    [
+      name,
+      good,
+      book_id,
+      filename !== null ? "imagesHero/" + filename : null,
+      slug,
+    ],
     (err, result) => {
       if (err) {
         res.status(500).send(err);
@@ -637,11 +655,13 @@ app.put("/authors/:id", (req, res) => {
     });
     return;
   }
+  const slug = name.toLowerCase() + "-" + surname.toLowerCase();
+
   //SQL
-  const sql = `UPDATE authors SET name = ?, surname = ?, nickname = ?, born=? WHERE id = ?`;
+  const sql = `UPDATE authors SET name = ?, surname = ?, nickname = ?, born=?, url=? WHERE id = ?`;
   connection.query(
     sql,
-    [name, surname, nickname, born, req.params.id],
+    [name, surname, nickname, born, slug, req.params.id],
     (err) => {
       if (err) {
         req.status(500).send(err);
@@ -714,22 +734,26 @@ app.put("/heroes/:id", (req, res) => {
     });
     return;
   }
+  //Slug
+  const slug = name.toLowerCase().replace(/ /g, "-");
   //SQL;
   let sql;
   let params;
   if (req.body.del || filename !== null) {
     sql =
-      "UPDATE heroes SET name = ?, good = ?, book_id = ?, image = ? WHERE id = ?";
+      "UPDATE heroes SET name = ?, good = ?, book_id = ?, image = ?, url = ? WHERE id = ?";
     params = [
       name,
       good,
       book_id,
       filename !== null ? "imagesHero/" + filename : null,
+      slug,
       req.params.id,
     ];
   } else {
-    sql = "UPDATE heroes SET name = ?, good = ?, book_id = ? WHERE id = ?";
-    params = [name, good, book_id, req.params.id];
+    sql =
+      "UPDATE heroes SET name = ?, good = ?, book_id = ?, url = ? WHERE id = ?";
+    params = [name, good, book_id, slug, req.params.id];
   }
 
   connection.query(sql, params, (err) => {

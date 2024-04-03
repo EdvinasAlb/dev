@@ -1,0 +1,31 @@
+$primary-color: #9a54bc;
+
+.download-app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $primary-color;
+  padding: 200px 10%;
+  gap: 4rem;
+  p {
+    font-size: 3rem;
+    color: #fff;
+    text-align: center;
+  }
+  .btn-1 {
+    background-color: #fff;
+    border-color: #fff;
+    font-weight: 400;
+    width: 200px;
+    text-align: center;
+  }
+  .btn-2 {
+    border-color: #fff;
+    font-weight: 400;
+    width: 200px;
+    text-align: center;
+  }
+  a:not(:last-child) {
+    margin-right: 20px;
+  }
+}

@@ -9,7 +9,7 @@ $email = $row['email'];
 $mobile = $row['mobile'];
 $password = $row['password'];
 
-if (isset ($_POST['submit'])) {
+if (isset($_POST['submit'])) {
     $name = $_POST['name'];
     $email = $_POST['email'];
     $mobile = $_POST['mobile'];
@@ -20,7 +20,7 @@ if (isset ($_POST['submit'])) {
     if ($result) {
         header("location:display.php");
     } else {
-        die (mysqli_error($con));
+        die(mysqli_error($con));
     }
 }
 ?>

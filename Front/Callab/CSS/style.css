@@ -449,8 +449,8 @@ body {
 }
 .join .head-line {
   position: relative;
-  width: 85%;
-  height: 600px;
+  width: 1200px;
+  height: 390px;
 }
 .join .head-line > * {
   position: absolute;
@@ -461,13 +461,99 @@ body {
   transform: translateX(-50%);
 }
 .join .head-line img[alt=line] {
-  width: 100%;
+  width: 1000px;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.join .head-line img[alt=head]:nth-child(3) {
+  top: 20px;
+  left: 75px;
+}
+.join .head-line img[alt=head]:nth-child(4) {
+  top: 175px;
+  left: 195px;
+}
+.join .head-line img[alt=head]:nth-child(5) {
+  top: 150px;
+  left: 375px;
+}
+.join .head-line img[alt=head]:nth-child(6) {
+  top: 240px;
+  left: 500px;
+}
+.join .head-line img[alt=head]:nth-child(7) {
+  top: 230px;
+  left: 680px;
+}
+.join .head-line img[alt=head]:nth-child(8) {
+  top: 200px;
+  left: 790px;
+}
+.join .head-line img[alt=head]:nth-child(9) {
+  top: 240px;
+  left: 950px;
+}
+.join .head-line img[alt=head]:nth-child(10) {
+  top: 130px;
+  left: 1050px;
 }
 .join .head-line p {
   color: #9a54bc;
-  display: inline;
+  display: inline-block;
+  width: auto;
   font-weight: 500;
-  top: 10%;
-  right: 12%;
+  top: 105px;
+  right: 220px;
   font-size: 0.8rem;
+}
+
+.download-app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #9a54bc;
+  padding: 200px 10%;
+  gap: 4rem;
+}
+.download-app p {
+  font-size: 3rem;
+  color: #fff;
+  text-align: center;
+}
+.download-app .btn-1 {
+  background-color: #fff;
+  border-color: #fff;
+  font-weight: 400;
+  width: 200px;
+  text-align: center;
+}
+.download-app .btn-2 {
+  border-color: #fff;
+  font-weight: 400;
+  width: 200px;
+  text-align: center;
+}
+.download-app a:not(:last-child) {
+  margin-right: 20px;
+}
+
+.map-section {
+  background-color: rgba(226, 189, 242, 0.11);
+  padding: 0 6%;
+  display: flex;
+}
+.map-section .contacts {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.map-section .map {
+  width: 60%;
+}
+.map-section .map iframe {
+  width: 100%;
 }/*# sourceMappingURL=style.css.map */

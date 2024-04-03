@@ -58,7 +58,7 @@ export default function Index() {
                       Author: {data.authorName} {data.authorSurname}
                     </div>
                     <div>
-                      <a href={"#book" + data.book_id}>view book</a>
+                      <a href={"#book/" + data.url}>view book</a>
                     </div>
                   </div>
                 </div>
