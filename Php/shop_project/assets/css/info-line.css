@@ -1,0 +1,27 @@
+.info-line {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 15px 0;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #222222;
+}
+
+.info-line a {
+  color: #fff;
+}
+
+@media (max-width: 766px) {
+  .top-info-line strong {
+    font-size: 0.7rem;
+  }
+}
+
+.bottom-info-line {
+  background-color: #f2f2f2;
+  color: #222222;
+}
+
+.bottom-info-line p {
+  margin: 0;
+}

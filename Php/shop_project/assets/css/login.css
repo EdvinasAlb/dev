@@ -1,0 +1,95 @@
+#login-form {
+  width: 50%;
+  margin: 5px auto;
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid var(--main-color);
+}
+
+#login-form input {
+  width: 50%;
+  margin: 5px auto;
+}
+
+#login-form #login-btn {
+  background-color: var(--main-color);
+  color: var(--white-color);
+}
+#login-form #register-url {
+  color: var(--main-color);
+}
+
+/* Register */
+#register-form {
+  width: 50%;
+  margin: 5px auto;
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid var(--main-color);
+}
+
+#register-form input {
+  width: 50%;
+  margin: 5px auto;
+}
+
+#register-form #register-btn {
+  background-color: var(--main-color);
+  color: var(--white-color);
+}
+
+#register-form #login-url {
+  color: var(--main-color);
+}
+
+/* Account */
+
+#account-form {
+  width: 50%;
+  margin: 35px auto;
+  text-align: center;
+  padding: 20px;
+}
+
+#account-form input {
+  margin: 5px auto;
+}
+
+#account-form #change-pass-btn {
+  color: var(--white-color);
+  background-color: var(--main-color);
+}
+
+.account-info #orders-btn,
+#logout-btn {
+  color: var(--main-color);
+  text-decoration: none;
+}
+
+/* Checkout */
+#checkout-form .checkout-small-element {
+  display: inline-block;
+  width: 48%;
+  margin: 10px auto;
+}
+
+#checkout-form .checkout-large-element {
+  width: 96%;
+}
+
+#checkout-form .checkout-btn-container {
+  margin: 10px;
+  text-align: right;
+  margin-right: 40px;
+}
+
+#checkout-form #checkout-btn {
+  color: var(--white-color);
+  background-color: var(--main-color);
+}
+
+/* Contact */
+
+#contact span {
+  color: var(--main-color);
+}

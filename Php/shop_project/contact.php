@@ -1,4 +1,4 @@
-<?php include('layouts/header.php') ?>
+<?php include 'layouts/header.php' ?>
 
 <!-- Contact -->
 <section id="contact" class="container my-5 py-5">
@@ -11,4 +11,4 @@
   </div>
 </section>
 
-<?php include('layouts/footer.php') ?>
+<?php include 'layouts/footer.php' ?>

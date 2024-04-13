@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="mt-5 py-5">
+<footer>
     <div class="row container mx-auto pt-5">
         <div class="footer-one col-lg-3 col-md-6 col-sm-12">
             <p class="pt-3">
@@ -35,11 +35,11 @@
         <div class="footer-one col-lg-3 col-md-6 col-sm-12">
             <h5 class="pb-2">Instagram</h5>
             <div class="row">
-                <img src="assets/img/coat1.jpg" class="img-fluid w-25 h-100 m-2" alt="" />
-                <img src="assets/img/featured1.jpg" class="img-fluid w-25 h-100 m-2" alt="" />
-                <img src="assets/img/featured2.jpg" class="img-fluid w-25 h-100 m-2" alt="" />
-                <img src="assets/img/featured3.jpg" class="img-fluid w-25 h-100 m-2" alt="" />
-                <img src="assets/img/featured4.jpg" class="img-fluid w-25 h-100 m-2" alt="" />
+                <img src="assets/img/insta.jpg" class="img-fluid w-25 h-100 m-2" alt="" />
+                <img src="assets/img/insta1.jpg" class="img-fluid w-25 h-100 m-2" alt="" />
+                <img src="assets/img/insta2.jpg" class="img-fluid w-25 h-100 m-2" alt="" />
+                <img src="assets/img/insta3.jpg" class="img-fluid w-25 h-100 m-2" alt="" />
+                <img src="assets/img/insta4.jpg" class="img-fluid w-25 h-100 m-2" alt="" />
             </div>
         </div>
     </div>

@@ -1,6 +1,6 @@
+<?php include 'layouts/header.php' ?>
 <?php
-session_start();
-include('server/connection.php');
+
 if (!isset($_SESSION['logged_in'])) {
   header('location: login.php');
   exit;
@@ -22,19 +22,19 @@ if (isset($_POST['change_password'])) {
 
   //if passwords dont match
   if ($password !== $confirm_password) {
-    header('location: account.php?error=passwords dont match');
+    header('location: account.php?password_error= Passwords dont match');
   }
   //if password less then 6 char
   else if (strlen($password) < 6) {
-    header('location: account.php?error=passwords must be at least 6 charakters');
+    header('location: account.php?password_error= Passwords must be at least 6 charakters');
     //no errors
   } else {
     $stmt = $conn->prepare("UPDATE users SET user_password=? WHERE user_email=?");
     $stmt->bind_param('ss', md5($password), $user_email);
     if ($stmt->execute()) {
-      header('location: account.php?message=password has been updated successfully');
+      header('location: account.php?password_message= Password has been updated successfully');
     } else {
-      header('location: account.php?error=could not update password');
+      header('location: account.php?password_error= Could not update password');
     }
   }
 }
@@ -50,17 +50,21 @@ if (isset($_SESSION['logged_in'])) {
 }
 ?>
 
-<?php include('layouts/header.php') ?>
 
 <!-- Account -->
 <section class="my-5 py-5">
   <div class="row container mx-auto">
+
+    <?php if (isset($_GET['payment_message'])) {  ?>
+      <p style="color: green;" class="mt-5 text-center"><?php echo $_GET['payment_message']; ?></p>
+    <?php } ?>
+
     <div class="text-center mt-3 pt-5 col-lg-6 col-md-12 col-sm-12">
-      <p class="text-center" style="color: green;"><?php if (isset($_GET['register_success'])) {
-                                                      echo $_GET['register_success'];
+      <p class="text-center" style="color: green;"><?php if (isset($_GET['loged_success'])) {
+                                                      echo $_GET['loged_success'];
                                                     } ?></p>
-      <p class="text-center" style="color: green;"><?php if (isset($_GET['login_success'])) {
-                                                      echo $_GET['login_success'];
+      <p class="text-center" style="color: green;"><?php if (isset($_GET['loged_error'])) {
+                                                      echo $_GET['loged_error'];
                                                     } ?></p>
       <h3 class="font-weight-bold">Acount info</h3>
       <hr class="mx-auto" />
@@ -80,11 +84,11 @@ if (isset($_SESSION['logged_in'])) {
     </div>
     <div class="col-lg-6 col-md-12 col-sm-12">
       <form id="account-form" method="post" action="account.php">
-        <p class="text-center" style="color: red;"><?php if (isset($_GET['error'])) {
-                                                      echo $_GET['error'];
+        <p class="text-center" style="color: red;"><?php if (isset($_GET['password_error'])) {
+                                                      echo $_GET['password_error'];
                                                     } ?></p>
-        <p class="text-center" style="color: green;"><?php if (isset($_GET['message'])) {
-                                                        echo $_GET['message'];
+        <p class="text-center" style="color: green;"><?php if (isset($_GET['password_message'])) {
+                                                        echo $_GET['password_message'];
                                                       } ?></p>
         <h3>Change Password</h3>
         <hr class="mx-auto" />

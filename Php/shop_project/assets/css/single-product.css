@@ -1,0 +1,31 @@
+.single-product input:focus {
+  outline: none;
+}
+
+.single-product .buy-btn {
+  background-color: var(--main-color);
+  opacity: 1;
+  transition: 0.4s all;
+  text-decoration: none;
+}
+
+.single-product .buy-btn:hover {
+  background-color: #222222;
+}
+.small-img-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.small-img-col {
+  flex-basis: 24%;
+  cursor: pointer;
+}
+
+.single-product input {
+  width: 50px;
+  height: 40px;
+  padding-left: 10px;
+  font-size: 16px;
+  margin-right: 10px;
+}

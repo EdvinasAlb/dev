@@ -1,6 +1,6 @@
+<?php include 'layouts/header.php' ?>
+
 <?php
-session_start();
-include('server/connection.php');
 if (isset($_SESSION['logged_in'])) {
   header('location: account.php');
   exit;
@@ -19,17 +19,16 @@ if (isset($_POST['login_btn'])) {
       $_SESSION['user_name'] = $user_name;
       $_SESSION['user_email'] = $user_email;
       $_SESSION['logged_in'] = true;
-      header('location: account.php?login_success=logged in successfully');
+      header('location: account.php?loged_success= Logged in successfully');
     } else {
-      header('location:login.php?error=could not werify you account');
+      header('location:login.php?loged_error= Could not werify you account');
     }
   } else {
-    header('location:login.php?error=something went wrong');
+    header('location:login.php?loged_error= Something went wrong');
   }
 }
 ?>
 
-<?php include('layouts/header.php') ?>
 
 <!-- Login -->
 <section class="my-5 py-5">
@@ -60,4 +59,4 @@ if (isset($_POST['login_btn'])) {
   </div>
 </section>
 
-<?php include('layouts/footer.php') ?>
+<?php include 'layouts/footer.php' ?>

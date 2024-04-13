@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+h5 {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+h6 {
+  color: #d8d8d8;
+}
+
+/* Admin dashboard */
+#admin-topbar {
+  display: flex;
+  background-color: #222222;
+  color: #fff;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding: 15px 15px;
+}
+
+#admin-topbar a {
+  text-decoration: none;
+  color: #fff;
+}
+
+#admin-topbar a:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 2px;
+}
+
+/* Side bar */
+#admin-sidebar {
+  width: 200px;
+  height: calc(100vh - 88px);
+  background-color: #f2f2f2;
+  padding-right: 25px;
+}
+
+#admin-sidebar ul li {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-top: 30px;
+  list-style: none;
+}
+
+#admin-sidebar ul li a {
+  text-decoration: none;
+  color: #222222;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+#admin-sidebar ul li a:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 2px;
+}
+
+#admin-dashboard {
+  display: flex;
+}
+
+#admin-dashboard table thead tr,
+#admin-dashboard table tbody tr,
+#admin-dashboard table h3 {
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* Account */
+#accounts,
+#help {
+  display: flex;
+}
+
+#accounts .account-info,
+#help .help-info {
+  padding-top: 70px;
+  font-size: 1.5rem;
+}

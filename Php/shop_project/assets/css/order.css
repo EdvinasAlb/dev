@@ -1,0 +1,31 @@
+.orders table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.orders .product-info {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.orders th {
+  padding: 5px 10px;
+  color: var(--white-color);
+  background-color: var(--main-color);
+  /* text-align: center; */
+}
+
+.orders td {
+  padding: 10px 20px;
+}
+
+.orders td img {
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+}
+
+.orders .details-btn {
+  color: var(--white-color);
+  background-color: var(--main-color);
+}

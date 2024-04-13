@@ -1,0 +1,26 @@
+#shop .buy-btn {
+  background-color: var(--main-color);
+  opacity: 1;
+  transition: 0.4s all;
+  text-decoration: none;
+  color: var(--white-color);
+  border-radius: 0;
+  padding: 8px 25px;
+}
+
+#shop .buy-btn:hover {
+  background-color: #222222;
+}
+
+.product {
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+
+.product img {
+  transition: 0.3s all;
+}
+
+.product img:hover {
+  opacity: 0.7;
+}

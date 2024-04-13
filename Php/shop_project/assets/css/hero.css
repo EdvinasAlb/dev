@@ -1,0 +1,22 @@
+#hero {
+  position: relative;
+  color: var(--white-color);
+}
+
+#hero img {
+  width: 100%;
+}
+
+#hero .hero-text {
+  position: absolute;
+  top: 35%;
+}
+
+#hero span {
+  color: var(--main-color);
+}
+
+#hero button a {
+  text-decoration: none;
+  color: #fff;
+}

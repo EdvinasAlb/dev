@@ -1,3 +1,8 @@
+<?php
+session_start();
+include 'server/connection.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,6 +13,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/hero.css" />
+    <link rel="stylesheet" href="assets/css/info-line.css" />
+    <link rel="stylesheet" href="assets/css/products.css" />
+    <link rel="stylesheet" href="assets/css/shop.css" />
+    <link rel="stylesheet" href="assets/css/single-product.css" />
+    <link rel="stylesheet" href="assets/css/cart.css" />
+    <link rel="stylesheet" href="assets/css/login.css" />
+    <link rel="stylesheet" href="assets/css/order.css" />
+    <link rel="stylesheet" href="assets/css/banner.css" />
     <title>Home</title>
 </head>
 
@@ -31,11 +45,19 @@
                         <a class="nav-link" href="#">Blog</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.php">Contact Us</a>
+                        <a class="nav-link" href="contact.php">Contacts</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="cart.php"><i class="fas fa-shopping-bag"></i></a>
+                    <li class="nav-item nav-icons">
+                        <?php
+                        if (isset($_SESSION['cart'])) {
+                            $count = count($_SESSION['cart']); ?>
+                            <a href="cart.php"><i class="fas fa-shopping-bag"><sup><?php if ($count > 0) echo $count ?></sup></i></a>
+                        <?php } else { ?>
+                            <a href="cart.php"><i class="fas fa-shopping-bag"><sup></sup></i></a>
+                        <?php } ?>
+
                         <a href="account.php"><i class="fas fa-user"></i></a>
+
                     </li>
                 </ul>
             </div>

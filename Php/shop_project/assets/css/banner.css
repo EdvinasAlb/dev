@@ -1,0 +1,27 @@
+#banner {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  background-color: #f2f2f2;
+  margin-bottom: 200px;
+}
+
+#banner img {
+  width: 40%;
+}
+
+#banner div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#banner h3 {
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+#paypal-button-container {
+  width: 250px;
+  margin: auto;
+}

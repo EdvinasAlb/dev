@@ -1,0 +1,84 @@
+.cart table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.cart .product-info {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cart th {
+  text-align: left;
+  padding: 5px 10px;
+  color: var(--white-color);
+  background-color: var(--main-color);
+}
+
+.cart td {
+  padding: 10px 20px;
+}
+
+.cart td img {
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+}
+
+.cart td input {
+  width: 40px;
+  height: 30px;
+  padding: 5px;
+}
+
+.cart td a {
+  color: var(--main-color);
+}
+
+.cart .remove-btn {
+  color: var(--main-color);
+  text-decoration: none;
+  font-size: 14px;
+  background-color: var(--white-color);
+  border: none;
+  width: 100%;
+}
+
+.cart .edit-btn {
+  color: var(--main-color);
+  text-decoration: none;
+  font-size: 15px;
+  background-color: var(--white-color);
+  border: none;
+}
+
+.cart .product-info p {
+  margin: 3px;
+}
+
+.cart-total {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cart-total table {
+  width: 100%;
+  max-width: 500px;
+  border-top: 3px solid var(--main-color);
+}
+
+td:last-child {
+  text-align: right;
+}
+th:last-child {
+  text-align: right;
+}
+
+.checkout-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.checkout-btn {
+  background-color: var(--main-color);
+  color: var(--white-color);
+}

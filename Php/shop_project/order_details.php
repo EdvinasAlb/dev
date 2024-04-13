@@ -1,6 +1,6 @@
 <?php
+include 'server/connection.php';
 // key words - 'not paid', 'delivered', 'shipped'
-include('server/connection.php');
 
 if (isset($_POST['order_details_btn']) && isset($_POST['order_id'])) {
     $order_id = $_POST['order_id'];
@@ -29,7 +29,7 @@ function calculateTotalOrderPrice($order_details)
 
 ?>
 
-<?php include('layouts/header.php') ?>
+<?php include 'layouts/header.php' ?>
 
 <!-- Order details -->
 <section id="orders" class="orders container my-5 py-3">
@@ -66,6 +66,7 @@ function calculateTotalOrderPrice($order_details)
         <?php
         if ($order_status == "not paid") { ?>
             <form style="float: right;" method="post" action="payment.php">
+                <input type="hidden" name="order_id" value="<?php echo $order_id; ?>">
                 <input type="hidden" name="order_total_price" value="<?php echo $order_total_price ?>" />
                 <input type="hidden" name="order_status" value="<?php echo $order_status ?>" />
                 <input type="submit" name="order_pay_btn" class="btn btn-primary" value="Pay Now">
@@ -75,4 +76,4 @@ function calculateTotalOrderPrice($order_details)
     </div>
 </section>
 
-<?php include('layouts/footer.php') ?>
+<?php include 'layouts/footer.php' ?>

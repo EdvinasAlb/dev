@@ -1,13 +1,12 @@
 <?php
 session_start();
-include('connection.php');
+include 'connection.php';
 
 //if user is not logged in
 if (!isset($_SESSION['logged_in'])) {
-    header('location: ../checkout.php?message=please login/register to place an order');
+    header('location: ../checkout.php?message= Please login/register to place an order');
     //if user is logged in
 } else {
-
     if (isset($_POST['place_order'])) {
         //1. get user info and store in database
         $name = $_POST['name'];
@@ -47,7 +46,9 @@ if (!isset($_SESSION['logged_in'])) {
         }
         //5. remove everything from cart
 
+        $_SESSION['order_id'] = $order_id;
+
         //6. inform user whether everything is fine or there is a problem
-        header('location:../payment.php?order_status=order placed successfully');
+        header('location:../payment.php?order_status= Order placed successfully');
     }
 }

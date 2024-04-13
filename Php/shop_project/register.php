@@ -1,13 +1,11 @@
+<?php include 'layouts/header.php' ?>
+
 <?php
-
-session_start();
-
 // if user has already register
 if (isset($_SESSION['logged_in'])) {
   header('location: account.php');
   exit;
 }
-include('server/connection.php');
 if (isset($_POST['register'])) {
   $name = $_POST['name'];
   $email = $_POST['email'];
@@ -15,11 +13,11 @@ if (isset($_POST['register'])) {
   $confirm_password = $_POST['confirm_password'];
   //if passwords dont match
   if ($password !== $confirm_password) {
-    header('location: register.php?error=passwords dont match');
+    header('location: register.php?register_error= Passwords dont match');
   }
   //if password less then 6 char
   else if (strlen($password) < 6) {
-    header('location: register.php?error=passwords must be at least 6 charakters');
+    header('location: register.php?register_error= Passwords must be at least 6 charakters');
     // if there is no error
   } else {
     //check whether there is a user with this email or not
@@ -31,7 +29,7 @@ if (isset($_POST['register'])) {
     $stmt1->fetch();
     //if there is a user already registered with this email
     if ($num_rows != 0) {
-      header('location: register.php?error=user with this email already exists');
+      header('location: register.php?register_error= User with this email already exists');
     } else {  //create a new user
       $stmt = $conn->prepare("INSERT INTO users (user_name, user_email, user_password)
                   VALUES (?,?,?)");
@@ -43,17 +41,15 @@ if (isset($_POST['register'])) {
         $_SESSION['user_email'] = $email;
         $_SESSION['user_name'] = $name;
         $_SESSION['logged_in'] = true;
-        header('location: account.php?register_success=you registered seccessfully');
+        header('location: account.php?register_success= You registered seccessfully');
         //account could net be created
       } else {
-        header('location: register.php?error=could not create an account at the moment');
+        header('location: register.php?register_error= Could not create an account at the moment');
       }
     }
   }
 }
 ?>
-
-<?php include('layouts/header.php') ?>
 
 <!-- Register -->
 <section class="my-5 py-5">
@@ -63,9 +59,12 @@ if (isset($_POST['register'])) {
   </div>
   <div class="mx-auto container">
     <form id="register-form" method="post" action="register.php">
-      <p style="color:red;"><?php if (isset($_GET['error'])) {
-                              echo $_GET['error'];
+      <p style="color:red;"><?php if (isset($_GET['register_error'])) {
+                              echo $_GET['register_error'];
                             } ?></p>
+      <p style="color:green;"><?php if (isset($_GET['register_success'])) {
+                                echo $_GET['register_success'];
+                              } ?></p>
       <div class="form-group">
         <label>Name</label>
         <input class="form-control" type="text" id="register-name" name="name" placeholder="Name" required="required" autocomplete="off" />
@@ -92,4 +91,4 @@ if (isset($_POST['register'])) {
   </div>
 </section>
 
-<?php include('layouts/footer.php') ?>
+<?php include 'layouts/footer.php' ?>
