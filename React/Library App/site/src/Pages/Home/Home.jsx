@@ -10,7 +10,7 @@ const sortBy = [
 export default function Index() {
   const [sort, setSort] = useState("");
 
-  const { data, loading, setUrl } = useGet("/");
+  const { data, loading, setUrl } = useGet("/landing");
 
   // const authorsBooks = (data) => {
   //   const authors = [];
@@ -73,14 +73,12 @@ export default function Index() {
     return authors;
   };
 
-  console.log(data);
-
   useEffect(
     (_) => {
       if (sort) {
-        setUrl(`/?sort=${sort}`);
+        setUrl(`/landing/?sort=${sort}`);
       } else {
-        setUrl("/");
+        setUrl("/landing");
       }
     },
     [sort, setUrl]

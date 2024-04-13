@@ -102,7 +102,7 @@ app.use(doAuth);
 
 // Front office //
 //Authors, books, heroes
-app.get("/", (req, res) => {
+app.get("/landing", (req, res) => {
   const sort = req.query.sort || "";
   let sql;
   if (sort === "name_asc") {
