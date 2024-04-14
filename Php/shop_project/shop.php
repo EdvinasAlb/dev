@@ -1,4 +1,6 @@
+<? session_start(); ?>
 <?php include 'layouts/header.php' ?>
+
 <?php
 //1.determine page number
 if (isset($_GET['page_no']) && $_GET['page_no'] !== "") {

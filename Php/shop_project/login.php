@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <?php include 'layouts/header.php' ?>
 
 <?php
@@ -38,8 +39,8 @@ if (isset($_POST['login_btn'])) {
   </div>
   <div class="mx-auto container">
     <form id="login-form" action="login.php" method="post">
-      <p style="color: red;" class="text-center"><?php if (isset($_GET['error'])) {
-                                                    echo $_GET['error'];
+      <p style="color: red;" class="text-center"><?php if (isset($_GET['loged_error'])) {
+                                                    echo $_GET['loged_error'];
                                                   } ?></p>
       <div class="form-group">
         <label>Email</label>

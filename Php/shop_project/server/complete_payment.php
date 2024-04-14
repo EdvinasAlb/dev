@@ -23,6 +23,7 @@ if (isset($_GET['transaction_id']) && isset($_GET['order_id'])) {
 
     //go tu user account
     header("location: ../account.php?payment_message= Paid successfully, thanks for your shooping with us");
+    unset($_SESSION['cart']);
 } else {
     header("location:index.php");
     exit;

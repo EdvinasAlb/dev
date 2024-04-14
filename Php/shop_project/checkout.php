@@ -1,3 +1,5 @@
+<?php session_start() ?>
+
 <?php include 'layouts/header.php' ?>
 <?php
 if (!empty($_SESSION['cart'])) {

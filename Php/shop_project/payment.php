@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <?php include 'layouts/header.php' ?>
 
 <?php
@@ -10,7 +11,7 @@ if (isset($_POST['order_pay_btn'])) {
 
 <!-- Payment -->
 <section class="my-5 py-5">
-    <div class="container text-center mt-3 pt-5">
+    <div class="container text-center my-5 py-5">
         <h2 class="font-weight-bold">Payment</h2>
         <hr class="mx-auto" />
     </div>
