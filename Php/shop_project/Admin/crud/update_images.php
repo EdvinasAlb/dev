@@ -1,5 +1,4 @@
 <?php include '../../server/connection.php' ?>
-
 <?php
 if (isset($_POST['update_images'])) {
 

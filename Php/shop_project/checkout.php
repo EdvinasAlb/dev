@@ -1,6 +1,5 @@
 <?php session_start() ?>
-
-<?php include 'layouts/header.php' ?>
+<?php include 'server/connection.php' ?>
 <?php
 if (!empty($_SESSION['cart'])) {
   //let user in
@@ -9,7 +8,7 @@ if (!empty($_SESSION['cart'])) {
   header('location:index.php');
 }
 ?>
-
+<?php include 'layouts/header.php' ?>
 <!-- Checkout -->
 <section class="my-5 py-5">
   <div class="container text-center mt-3 pt-5">
@@ -47,7 +46,7 @@ if (!empty($_SESSION['cart'])) {
         <input class="form-control" type="text" id="checkout-address" name="address" placeholder="Address" required="required" />
       </div>
       <div class="form-group checkout-btn-container">
-        <p>Total amount: $ <?php echo $_SESSION['total']; ?></p>
+        <p>Total amount: € <?php echo $_SESSION['total']; ?></p>
         <input class="btn" type="submit" id="checkout-btn" value="Place Order" name="place_order" />
       </div>
     </form>

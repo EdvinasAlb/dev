@@ -53,7 +53,7 @@ function calculateTotalOrderPrice($order_details)
                         </div>
                     </td>
                     <td class="text-center">
-                        <span>$ <?php echo $row['product_price'] ?></span>
+                        <span>€ <?php echo $row['product_price'] ?></span>
                     </td>
                     <td>
                         <span><?php echo $row['product_quantity'] ?></span>

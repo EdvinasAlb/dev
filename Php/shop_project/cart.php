@@ -1,5 +1,5 @@
 <?php session_start() ?>
-
+<?php include 'server/connection.php' ?>
 <?php
 if (isset($_POST['add_to_cart'])) {
   //if user has already added a product to cart
@@ -101,7 +101,7 @@ function calculateTotalCart()
                   <img src="assets/img/<?php echo $value['product_image']; ?>" alt="" />
                   <div>
                     <p class="ms-3"><?php echo $value['product_name']; ?></p>
-                    <small class="ms-3"><span>$</span><?php echo $value['product_price']; ?></small>
+                    <small class="ms-3"><span>€</span><?php echo $value['product_price']; ?></small>
                     <br />
                     <form method="post" action="cart.php">
                       <input type="hidden" name="product_id" value="<?php echo $value['product_id']; ?>" />
@@ -130,7 +130,7 @@ function calculateTotalCart()
           <table>
             <tr>
               <td>Total</td>
-              <td>$ <?php echo $_SESSION['total']; ?></td>
+              <td>€ <?php echo $_SESSION['total']; ?></td>
             </tr>
           </table>
         </div>

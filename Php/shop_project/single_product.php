@@ -1,7 +1,5 @@
 <?php session_start() ?>
-<?php include 'layouts/header.php' ?>
-
-
+<?php include 'server/connection.php' ?>
 <?php
 if (isset($_GET['product_id'])) {
   $product_id = $_GET['product_id'];
@@ -15,8 +13,7 @@ if (isset($_GET['product_id'])) {
 }
 
 ?>
-
-
+<?php include 'layouts/header.php' ?>
 <!-- Single product -->
 <section class="container single-product my-5 pt-5">
   <div class="row mt-5">
@@ -43,7 +40,7 @@ if (isset($_GET['product_id'])) {
       <div class="col-lg-6 col-md-12 col-sm-12">
         <h6>Men/Shoes</h6>
         <h3 class="py-4"><?php echo $row['product_name']; ?></h3>
-        <h2><?php echo $row['product_price']; ?>$</h2>
+        <h2><?php echo $row['product_price']; ?>€</h2>
 
         <!-- Cart form -->
         <Form method="post" action="cart.php">

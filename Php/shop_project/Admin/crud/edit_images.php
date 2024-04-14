@@ -1,4 +1,5 @@
-<?php include "header.php"; ?>
+<?php session_start();
+include('../../server/connection.php'); ?>
 <?php
 if (isset($_GET['product_id'])) {
     $product_id = $_GET['product_id'];
@@ -7,7 +8,7 @@ if (isset($_GET['product_id'])) {
     header('location: ../products.php');
 }
 ?>
-
+<?php include "header.php"; ?>
 <section id="admin-dashboard">
     <?php include "sidebar.php"; ?>
     <form class="mx-auto text-center" method="post" action="update_images.php" enctype="multipart/form-data">

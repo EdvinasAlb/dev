@@ -97,7 +97,7 @@ $products = $stmt2->get_result();
                     <td><?php echo $product['product_id']; ?></td>
                     <td><img style="width: 70px; height:70px;" src="../assets/img/<?php echo $product['product_image']; ?>"></td>
                     <td><?php echo $product['product_name']; ?></td>
-                    <td><?php echo "$" . $product['product_price']; ?></td>
+                    <td><?php echo $product['product_price']; ?></td>
                     <td><?php echo $product['product_special_offer']; ?></td>
                     <td><?php echo $product['product_category']; ?></td>
                     <td><?php echo $product['product_color']; ?></td>

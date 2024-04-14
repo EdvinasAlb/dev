@@ -1,5 +1,4 @@
-<?php include 'layouts/header.php' ?>
-
+<?php include 'server/connection.php' ?>
 <?php
 // if user has already register
 if (isset($_SESSION['logged_in'])) {
@@ -50,7 +49,7 @@ if (isset($_POST['register'])) {
   }
 }
 ?>
-
+<?php include 'layouts/header.php' ?>
 <!-- Register -->
 <section class="my-5 py-5">
   <div class="container text-center mt-3 pt-5">

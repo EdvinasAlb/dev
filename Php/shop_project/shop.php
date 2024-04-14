@@ -1,6 +1,5 @@
 <? session_start(); ?>
-<?php include 'layouts/header.php' ?>
-
+<?php include 'server/connection.php' ?>
 <?php
 //1.determine page number
 if (isset($_GET['page_no']) && $_GET['page_no'] !== "") {
@@ -36,7 +35,7 @@ $stmt2->execute();
 $products = $stmt2->get_result();
 
 ?>
-
+<?php include 'layouts/header.php' ?>
 <!-- Shop -->
 <section id="shop" class="my-5 py-5">
   <div class="container mt-5 py-5">
@@ -58,7 +57,7 @@ $products = $stmt2->get_result();
           <i class="fas fa-star"></i>
         </div>
         <h5 class="p-name"><?php echo $row['product_name']; ?></h5>
-        <h4 class="p-price">$ <?php echo $row['product_price']; ?></h4>
+        <h4 class="p-price">€ <?php echo $row['product_price']; ?></h4>
         <a class="btn buy-btn" href="<?php echo "single_product.php?product_id=" . $row['product_id'] ?>">Buy Now</a>
       </div>
     <?php } ?>

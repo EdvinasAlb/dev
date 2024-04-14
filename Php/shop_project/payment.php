@@ -1,6 +1,5 @@
 <?php session_start() ?>
-<?php include 'layouts/header.php' ?>
-
+<?php include 'server/connection.php' ?>
 <?php
 if (isset($_POST['order_pay_btn'])) {
     $order_status = $_POST['order_status'];
@@ -19,14 +18,14 @@ if (isset($_POST['order_pay_btn'])) {
         <?php if (isset($_POST['order_status']) && $_POST['order_status'] == "not paid") { ?>
             <?php $_amount = strval($_POST['order_total_price']); ?>
             <?php $order_id = $_POST['order_id']; ?>
-            <p>Total payment: $ <?php echo $_POST['order_total_price']; ?></p>
+            <p>Total payment: € <?php echo $_POST['order_total_price']; ?></p>
             <div id="paypal-button-container"></div>
 
 
         <?php } else if (isset($_SESSION['total']) && $_SESSION['total']) { ?>
             <?php $_amount = strval($_SESSION['total']); ?>
             <?php $order_id = $_SESSION['order_id']; ?>
-            <p>Total payment: $ <?php echo $_SESSION['total']; ?></p>
+            <p>Total payment: € <?php echo $_SESSION['total']; ?></p>
             <div id="paypal-button-container"></div>
 
         <?php } else { ?>
@@ -34,7 +33,7 @@ if (isset($_POST['order_pay_btn'])) {
         <?php } ?>
     </div>
 </section>
-
+<?php include 'layouts/header.php' ?>
 <!-- Payment - Paypal -->
 <script src="https://www.paypal.com/sdk/js?client-id=AVXnGi2W7W0qVnjQAMVICYcRm0r3U1SFrvKM7_U-vMrWT8-0pdiOBmg-lzDFwQTocgMOZJ5aPhIexk_h"></script>
 <script>

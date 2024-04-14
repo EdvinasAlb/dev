@@ -1,4 +1,5 @@
 <?php session_start() ?>
+<?php include 'server/connection.php' ?>
 <?php include 'layouts/header.php' ?>
 
 <!-- hero -->
@@ -70,7 +71,7 @@
           <i class="fas fa-star"></i>
         </div>
         <h5 class="p-name"><?php echo $row['product_name']; ?></h5>
-        <h4 class="p-price">$<?php echo $row['product_price']; ?></h4>
+        <h4 class="p-price">€<?php echo $row['product_price']; ?></h4>
         <a href="single_product.php?product_id=<?php echo $row['product_id'] ?>"><button class="buy-btn">Buy Now</button></a>
       </div>
 

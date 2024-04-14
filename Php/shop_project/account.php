@@ -1,7 +1,6 @@
 <?php session_start() ?>
-<?php include 'layouts/header.php' ?>
+<?php include 'server/connection.php' ?>
 <?php
-
 if (!isset($_SESSION['logged_in'])) {
   header('location: login.php');
   exit;
@@ -50,8 +49,7 @@ if (isset($_SESSION['logged_in'])) {
   $orders = $stmt->get_result();
 }
 ?>
-
-
+<?php include 'layouts/header.php' ?>
 <!-- Account -->
 <section class="my-5 py-5">
   <div class="row container mx-auto">
@@ -128,7 +126,7 @@ if (isset($_SESSION['logged_in'])) {
             <span><?php echo $row['order_id'] ?></span>
           </td>
           <td class="text-center">
-            <span>$ <?php echo $row['order_cost'] ?></span>
+            <span>€ <?php echo $row['order_cost'] ?></span>
           </td>
           <td class="text-center">
             <span><?php echo $row['order_status'] ?></span>

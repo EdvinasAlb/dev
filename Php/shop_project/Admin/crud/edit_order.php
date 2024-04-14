@@ -1,5 +1,5 @@
-<?php include "header.php"; ?>
-
+<?php session_start();
+include('../../server/connection.php'); ?>
 <?php
 if (!isset($_SESSION['admin_logged_in'])) {
     header('location: ../login.php');
@@ -30,7 +30,7 @@ if (isset($_GET['order_id'])) {
 }
 ?>
 
-
+<?php include "header.php"; ?>
 <section id="admin-dashboard">
     <?php include "sidebar.php" ?>
     <form class="text-center mx-auto my-3" method="post" action="edit_order.php">
