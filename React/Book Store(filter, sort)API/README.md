@@ -4,7 +4,7 @@
 
 ## Usage
 
-React Js (Sort, Filter), Books Api.
+React (Sort, Filter), Books Api.
 
 ###
 
