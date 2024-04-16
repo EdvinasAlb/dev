@@ -1,4 +1,4 @@
-# Mini projects make with Css Html Js
+# Mini projects made with Css Html Js
 
 ![Alt text](img/project1.png "Project1")
 ![Alt text](img/project2.png "Project2")
