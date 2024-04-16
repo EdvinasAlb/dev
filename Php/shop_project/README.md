@@ -1,4 +1,4 @@
-# app Ecommerce project FlyFeet
+# Ecommerce project FlyFeet
 
 ![Alt text](assets/img/screen2.png "Home")
 ![Alt text](assets/img/screen1.png "Shop")
