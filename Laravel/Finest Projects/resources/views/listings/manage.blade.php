@@ -5,7 +5,7 @@
             <h1
                 class="text-3xl text-center font-bold my-6 uppercase"
             >
-                Manage Gigs
+                Manage Projects
             </h1>
         </header>
 
@@ -17,9 +17,7 @@
                     <td
                         class="px-4 py-8 border-t border-b border-gray-300 text-lg"
                     >
-                        <a href="show.html">
-                            {{$listing->title}}
-                        </a>
+                    <a href="/listings/{{$listing->id}}">{{$listing->title}}</a>
                     </td>
                     <td
                         class="px-4 py-8 border-t border-b border-gray-300 text-lg"

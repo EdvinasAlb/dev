@@ -10,7 +10,7 @@ Hosted @ https://my-project-flyfeet.000webhostapp.com/
 
 ## Usage
 
-Html, Css, Js, Php, Sql.
+Html, Css, Js, Php, MySql.
 
 ###
 

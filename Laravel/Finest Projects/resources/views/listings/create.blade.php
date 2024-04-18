@@ -2,14 +2,13 @@
     <x-card  class="p-10 max-w-lg mx-auto mt-24">
         <header class="text-center">
             <h2 class="text-2xl font-bold uppercase mb-1">
-                Edit a Gig
+                Create a Project
             </h2>
-            <p class="mb-4">Edit: {{$listing->title}}</p>
+            <p class="mb-4">Post a project to find a developer</p>
         </header>
 
-        <form method="POST" action="/listings/{{$listing->id}}" enctype="multipart/form-data">
+        <form method="POST" action="/listings" enctype="multipart/form-data">
             @csrf
-            @method('PUT')
             <div class="mb-6">
                 <label
                     for="company"
@@ -20,7 +19,7 @@
                     type="text"
                     class="border border-gray-200 rounded p-2 w-full"
                     name="company"
-                    value="{{$listing->company}}"
+                    value="{{old('company')}}"
                 />
                 @error('company')
                     <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -36,7 +35,7 @@
                     class="border border-gray-200 rounded p-2 w-full"
                     name="title"
                     placeholder="Example: Senior Laravel Developer"
-                    value="{{$listing->title}}"
+                    value="{{old('title')}}"
                 />
                 @error('title')
                     <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -54,7 +53,7 @@
                     class="border border-gray-200 rounded p-2 w-full"
                     name="location"
                     placeholder="Example: Remote, Boston MA, etc"
-                    value="{{$listing->location}}"
+                    value="{{old('location')}}"
                 />
                 @error('location')
                     <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -69,7 +68,7 @@
                     type="text"
                     class="border border-gray-200 rounded p-2 w-full"
                     name="email"
-                    value="{{$listing->email}}"
+                    value="{{old('email')}}"
                 />
                 @error('email')
                     <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -87,7 +86,7 @@
                     type="text"
                     class="border border-gray-200 rounded p-2 w-full"
                     name="website"
-                    value="{{$listing->website}}"
+                    value="{{old('website')}}"
                 />
                 @error('website')
                     <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -103,7 +102,7 @@
                     class="border border-gray-200 rounded p-2 w-full"
                     name="tags"
                     placeholder="Example: Laravel, Backend, Postgres, etc"
-                    value="{{$listing->tags}}"
+                    value="{{old('tags')}}"
                 />
                 @error('tags')
                     <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -119,12 +118,6 @@
                     class="border border-gray-200 rounded p-2 w-full"
                     name="logo"
                 />
-                <img
-                    class="w-48 mr-6 mb-6"
-                    src="{{$listing->logo ? asset('storage/' . $listing->logo) : asset('/img/no-image.png')}}"
-                    alt=""
-                />
-
                 @error('logo')
                 <p class="text-red-500 text-xs mt-1">{{$message}}</p>
             @enderror
@@ -142,7 +135,7 @@
                     name="description"
                     rows="10"
                     placeholder="Include tasks, requirements, salary, etc"
-                >{{$listing->description}}</textarea>
+                >{{old('description')}}</textarea>
                 @error('description')
                     <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                 @enderror
@@ -152,7 +145,7 @@
                 <button
                     class="bg-laravel text-white rounded py-2 px-4 hover:bg-black"
                 >
-                    Update Gig
+                    Create
                 </button>
 
                 <a href="/" class="text-black ml-4"> Back </a>
