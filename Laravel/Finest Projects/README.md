@@ -8,7 +8,7 @@
 
 ## Usage
 
-Laravel, Php, Tailwind, Alpine.js, MySql.
+Laravel, Tailwind, Alpine.js, MySql.
 
 ###
 
