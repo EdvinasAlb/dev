@@ -1,13 +1,12 @@
-# Tasks List
+# Book Review
 
 ![Alt text](public/img/screen.png "Screen")
 ![Alt text](public/img/screen1.png "Screen1")
 ![Alt text](public/img/screen2.png "Screen2")
-![Alt text](public/img/screen3.png "Screen3")
 
 ## Usage
 
-Laravel, Tailwind, Alpine.js, MySql.
+Laravel, Tailwind, MySql.
 
 ###
 
